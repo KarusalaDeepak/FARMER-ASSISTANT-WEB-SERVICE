@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link rel='stylesheet' href="farmersupplierlogin.css">
+</head>
+
+<body>
+    <div class="cotn_principal">
+        <div class="cont_centrar">
+            <div class="cont_login">
+                <div class="cont_info_log_sign_up">
+                    <div class="col_md_login">
+                        <div class="cont_ba_opcitiy">
+                            <h2>LOGIN</h2>
+                            <p>Already a User</p>
+                            <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+                        </div>
+                    </div>
+                    <div class="col_md_sign_up">
+                        <div class="cont_ba_opcitiy">
+                            <h2>SIGN UP</h2>
+                            <p>Are you a new User</p>
+                            <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cont_back_info">
+                    <div class="cont_img_back_grey">
+                        <img src="../assets/loginbackground.jpg"
+                            alt="" />
+                    </div>
+                </div>
+                <div class="cont_forms">
+                    <div class="cont_img_back_">
+                        <img src="../assets/loginbackground.jpg"
+                            alt="" />
+                    </div>
+                    <div class="cont_form_login">
+                        <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                        <h2>LOGIN</h2>
+                        <form action = "loginsupplier.php" method = "POST" target="DummyFrame" id="loginForm">
+                            <input type="text" placeholder="ID" name = "ID" required/>
+                            <input type="password" placeholder="Password" name = "pwd" required/>
+                            <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+                        </form> 
+                        <div class="alert alert-success" role="alert" style = "display: none;">
+                            Sussessfully Logged in..
+                        </div>
+                        <div class="alert alert-danger" role="alert" style = "display: none;">
+                        You have entered wrong User ID or password. 
+                        </div>
+                    </div>
+                    <div class="cont_form_sign_up">
+                        <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                        <h2>SIGN UP</h2>
+                        <form action = "signupsupplier.php" method = "POST" target="DummyFrame">
+                        <input type="text" name = "SupplierName" placeholder="User Name" />
+                        <input type="text" name = "SupplierEmail" placeholder="Email" />
+                        <input type="tel" name = "SupplierMobileNumber" placeholder="Mobile Number" />
+                        <input type="password" name = "SupplierPassword" placeholder="Password" />
+                        <input type="password" name = "SupplierConfirmPassword" placeholder="Confirm Password" />
+                        <button type = "submit" class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+                    </form>
+                    <div class="alert alert-success" id = "supplierloginidgenerate" role="alert" style = "display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <iframe name="DummyFrame" style="display:none;"></iframe>
+    <script src="supplierloginscript.js"></script>
+</html>
