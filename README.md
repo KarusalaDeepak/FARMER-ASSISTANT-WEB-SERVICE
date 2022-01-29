@@ -8,7 +8,7 @@ Many farmers and suppliers do not have communication efficiently. The crop gets 
 
 Through this web application, we can aim to solve such problems and may thereby improves farmer - supplier and farmer – farmer interaction.
 
-# Project Description
+## Project Description
 
 This web project to help the farmers working with the motive of greater profitability by direct communication between; farmer-to- supplier and farmer-to-farmer.This service boosts business communication and brings transparency in the system.This innovative site allows a good farmer, retailer and supplier communication. It provides an option of login to farmers and communicates to respective dealers. The farmers also have an option to submit their grievances and complaints to respective dealers or authorities using their farmer login on a separate complaints page and authorities will get access to that page regularly using their login id and passwords.
 **This web project provides following features:**
