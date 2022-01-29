@@ -2,16 +2,15 @@
 
 This project is done as part of the Future Ready Talent Virtual Internship Program organised by Microsoft.
 
-**Problem Statement**
+## Problem Statement
 
 Many farmers and suppliers do not have communication efficiently. The crop gets wasted if it is not sold and the farmer may remain in debts due to losses. The retailers may also not get good profits due to less purchase of crop. This results in economic and food crisis. The farmers do not have much knowledge on technology to get more yield of crop. The farmers have to sell the crop for less prices if there is lack of communication between him and the suppliers.
 
 Through this web application, we can aim to solve such problems and may thereby improves farmer - supplier and farmer – farmer interaction.
 
-**Project Description**
+# Project Description
 
 This web project to help the farmers working with the motive of greater profitability by direct communication between; farmer-to- supplier and farmer-to-farmer.This service boosts business communication and brings transparency in the system.This innovative site allows a good farmer, retailer and supplier communication. It provides an option of login to farmers and communicates to respective dealers. The farmers also have an option to submit their grievances and complaints to respective dealers or authorities using their farmer login on a separate complaints page and authorities will get access to that page regularly using their login id and passwords.
-
 **This web project provides following features:**
 
 1. Separate login areas with appropriated functionality for farmers, administrators and dealers/ retailers.
@@ -23,8 +22,7 @@ Azure Services used
 
 - **Azure App Service**  to host the PHP Web App: B1 Plan (free for a month)
 - **Azure SQL Database**  to host the DBMS Server: Compute Gen5 General Purpose Serverless Architecure (vCore based pricing tier)
-
-**User Interface**
+## User Interface
 
 **Sign In**
 
