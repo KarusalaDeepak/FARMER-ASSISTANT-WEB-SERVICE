@@ -24,7 +24,7 @@ else if($AdminID[0] == "A")
         $('.alert-danger', window.parent.document).hide();
         $('.alert-success', window.parent.document).show();
         sessionStorage.setItem('userID','$AdminID');
-        window.parent.location = 'http://localhost/FARMER%20ASSISTANT%20WEB%20SERVICE/admin.php';
+        window.parent.location = 'admin.php';
     </script>";
 }
 ?>
