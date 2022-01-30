@@ -116,7 +116,7 @@
         });  
         $('#LogoutButton').on('click', function() {
             sessionStorage.clear();
-            window.location = 'main.html';
+            window.location = '../index.html';
         });
     </script>
     <iframe name="DummyFrame" style="display:none;"></iframe>
