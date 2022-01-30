@@ -59,7 +59,7 @@
             </tr>
 
             <?php
-                $con = mysqli_connect("localhost:3309","root","","farmerwebservice");
+                $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
                 if (mysqli_connect_errno()) {
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     exit();
@@ -98,8 +98,7 @@
                 <th>Delete Supplier</th>
             </tr>
             <?php
-
-                $con = mysqli_connect("localhost:3309","root","","farmerwebservice");
+                $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
                 if (mysqli_connect_errno()) {
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     exit();
@@ -138,7 +137,7 @@
                 <th>Status</th>
             </tr>
             <?php
-                $con = mysqli_connect("localhost:3309","root","","farmerwebservice");
+                $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
                 if (mysqli_connect_errno()) {
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     exit();
