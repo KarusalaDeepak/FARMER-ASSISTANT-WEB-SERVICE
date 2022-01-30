@@ -119,7 +119,6 @@
             window.location = 'main.html';
         });
     </script>
-
-</body>
     <iframe name="DummyFrame" style="display:none;"></iframe>
+</body>
 </html>
