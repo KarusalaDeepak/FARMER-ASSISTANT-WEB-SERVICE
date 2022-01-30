@@ -1,13 +1,13 @@
 <?php
     $userID = $_POST["userID"];
     $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
-    if (sqlsrv_connect_errno()) {
+    if (mysql_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit();
     }
 
     $sql = "SELECT * FROM sell_crop WHERE SUPPLIER_ID = '$userID'";
-    $result = sqlsrv_query($con, $sql);
+    $result = mysqli_query($con, $sql);
     $serial_number = 1;
     while($row = mysqli_fetch_assoc($result)){
         echo 
