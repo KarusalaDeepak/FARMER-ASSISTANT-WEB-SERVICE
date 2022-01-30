@@ -11,7 +11,7 @@
     <div id = "head"><h1><b>FARMER</b></h1></div>
     <div>
         <ul class = "navigation">        
-            <li id = "CropAdvertisementButton"><a href="#CropAdvertisement">Crop Advertisement</a></li>
+            <li id = "CropAdvertisementButton"><a href="#">Crop Advertisement</a></li>
             <li id = "BuyingStatusButton"><a href="#">Buying Status</a></li>
             <li id = "FarmingTipsButton"><a href="#">Farming Tips</a></li>
             <li id = "ComplaintPageButton"><a href="#">Complaint Page</a></li>
