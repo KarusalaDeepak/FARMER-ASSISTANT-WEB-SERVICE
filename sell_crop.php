@@ -61,7 +61,6 @@
         Your information is successfully submitted.!
         </div>
     </div>
-
-</body>
     <iframe name="DummyFrame" style="display:none;"></iframe>
+</body>
 </html>
