@@ -24,7 +24,7 @@ else if($AdminID[0] == "A")
         $('.alert-danger', window.parent.document).hide();
         $('.alert-success', window.parent.document).show();
         sessionStorage.setItem('userID','$AdminID');
-        window.parent.location = 'admin.php';
+        window.parent.location = '../admin.php';
     </script>";
 }
 ?>
