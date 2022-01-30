@@ -24,7 +24,7 @@ else if($FarmerID[0] == "F")
         $('.alert-danger', window.parent.document).hide();
         $('.alert-success', window.parent.document).show();
         sessionStorage.setItem('userID','$FarmerID');
-        window.parent.location = 'http://localhost/FARMER%20ASSISTANT%20WEB%20SERVICE/farmer.php';
+        window.parent.location = 'farmer.php';
     </script>";
 }
 ?>
