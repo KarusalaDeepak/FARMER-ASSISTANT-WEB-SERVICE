@@ -228,7 +228,7 @@
             ?>
         </table>
     </div>
-
+    <iframe name="DummyFrame" style="display:none;"></iframe>
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script>
         if(sessionStorage.getItem("userID") == null)
@@ -280,7 +280,6 @@
             window.location = '../index.html';
         });
     </script>
-    <iframe name="DummyFrame" style="display:none;"></iframe>
 </body>
 </html>
 
