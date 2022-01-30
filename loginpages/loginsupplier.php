@@ -24,7 +24,7 @@ else if($SupplierID[0] == "S")
         $('.alert-danger', window.parent.document).hide();
         $('.alert-success', window.parent.document).show();
         sessionStorage.setItem('userID','$SupplierID');
-        window.parent.location = 'supplier.php';
+        window.parent.location = '../supplier.php';
     </script>";
 }
 ?>
