@@ -91,14 +91,10 @@ require_once('config.php');
                 <th>Status</th>
             </tr>
             <?php
-                $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
-                if (mysqli_connect_errno()) {
-                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    exit();
-                }
-                $sql = "SELECT * FROM sell_crop INNER JOIN supplier WHERE sell_crop.SUPPLIER_ID =  supplier.SUPPLIER_ID";
-                $result = mysqli_query($con, $sql);
-                while($row = mysqli_fetch_assoc($result)){
+                $query1 = $con->prepare("SELECT * FROM sell_crop INNER JOIN supplier ON sell_crop.SUPPLIER_ID =  supplier.SUPPLIER_ID");
+                $query1->execute();
+                $sqldata1 = $query1->fetchAll(PDO::FETCH_ASSOC);
+                foreach($sqldata1 as $row){
                     echo 
                         "<tr>
                             <td>" . $row["SUPPLIER_ID"] . "</td>
@@ -122,15 +118,10 @@ require_once('config.php');
                 <th>Date & Time</th>
             </tr>
             <?php
-            $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
-            if (mysqli_connect_errno()) {
-                echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                exit();
-            }
-
-            $sql = "SELECT * FROM farming_tips ORDER BY dt ASC";
-            $result = mysqli_query($con, $sql);
-            while($row = mysqli_fetch_assoc($result)){
+                $query2 = $con->prepare("SELECT * FROM farming_tips ORDER BY dt ASC");
+                $query2->execute();
+                $sqldata2 = $query2->fetchAll(PDO::FETCH_ASSOC);
+                foreach($sqldata2 as $row){
                 echo 
                     "<tr>
                         <td>" . $row["SERIAL_NUMBER"] . "</td>
@@ -153,15 +144,9 @@ require_once('config.php');
             <tr>
                 <td>Complaint ID:</td>
                 <?php
-                    $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
-                    if (mysqli_connect_errno()) {
-                        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                        exit();
-                    }
-
-                    $sql = "SELECT * FROM complaint_page ORDER BY COMPLAINT_NUMBER DESC LIMIT 1";
-                    $result = mysqli_query($con, $sql);
-                    $row = mysqli_fetch_array($result);
+                    $query3 = $con->prepare("SELECT * FROM complaint_page ORDER BY COMPLAINT_NUMBER DESC LIMIT 1");
+                    $query3->execute();
+                    $row = $query3->fetch(PDO::FETCH_ASSOC);
                     $complaintno = $row["COMPLAINT_NUMBER"];
                     if ($complaintno == "")
                     {
@@ -207,14 +192,10 @@ require_once('config.php');
                 <th>Status</th>
             </tr>
             <?php
-                $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
-                if (mysqli_connect_errno()) {
-                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    exit();
-                }
-                $sql = "SELECT * FROM complaint_page ORDER BY COMPLAINT_NUMBER ASC";
-                $result = mysqli_query($con, $sql);
-                while($row = mysqli_fetch_assoc($result)){
+                $query4 = $con->prepare("SELECT * FROM complaint_page ORDER BY COMPLAINT_NUMBER ASC");
+                $query4->execute();
+                $sqldata4 = $query4->fetchAll(PDO::FETCH_ASSOC);
+                foreach($sqldata4 as $row){
                     echo 
                         "<tr>
                             <td>" . $row["COMPLAINT_NUMBER"]. "</td>
