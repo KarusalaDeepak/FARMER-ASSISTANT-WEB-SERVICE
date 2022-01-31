@@ -52,23 +52,14 @@
                 <th>Sell It</th>
             </tr>
             <?php
-           try
-            {
-                $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
-                $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            }
-            catch(PDOException $e)
-            {
-            ?>
-                <script>
-                    alert("Connection to Database Failed!");
-                </script>
-            <?php
-            }
-            $query = $con->prepare("SELECT * FROM crop_advertisement INNER JOIN supplier WHERE crop_advertisement.SUPPLIER_ID =  supplier.SUPPLIER_ID");
-            $query->execute();
-            $sqldata = $query->fetchAll(PDO::FETCH_ASSOC)
-                foreach($sqldata as $row){
+            $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
+                if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                    exit();
+                }
+                $sql = "SELECT * FROM sell_crop INNER JOIN supplier WHERE sell_crop.SUPPLIER_ID =  supplier.SUPPLIER_ID";
+                $result = mysqli_query($con, $sql);
+                while($row = mysqli_fetch_assoc($result)){
                 $SUPPLIER_ID = $row['SUPPLIER_ID'];
                 $CROP_ID = $row['CROP_ID'];
                 $CROP_NAME = $row['CROP_NAME'];
