@@ -55,7 +55,7 @@ require_once('config.php');
                 <th>Sell It</th>
             </tr>
             <?php
-                $query = $con->prepare("SELECT * FROM sell_crop INNER JOIN supplier ON sell_crop.SUPPLIER_ID =  supplier.SUPPLIER_ID");
+                $query = $con->prepare("SELECT * FROM crop_advertisement INNER JOIN supplier ON crop_advertisement.SUPPLIER_ID =  supplier.SUPPLIER_ID");
                 $query->execute();
                 $sqldata=$query->fetchAll(PDO::FETCH_ASSOC);
                 foreach($sqldata as $row){
