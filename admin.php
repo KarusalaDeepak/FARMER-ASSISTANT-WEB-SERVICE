@@ -101,7 +101,7 @@
                 $query2->execute();
                 $sqldata2 = $query2->fetchAll(PDO::FETCH_ASSOC);
                 $serial_number = 1;
-                foreach($sqldata as $row){
+                foreach($sqldata2 as $row){
                     echo 
                         "<tr>
                             <td>" . $serial_number++ . "</td>
@@ -134,7 +134,7 @@
                 $query3 = $con->prepare("SELECT * FROM complaint_page ORDER BY COMPLAINT_NUMBER ASC");
                 $query3->execute();
                 $sqldata3 = $query3->fetchAll(PDO::FETCH_ASSOC);
-                foreach($sqldata as $row){
+                foreach($sqldata3 as $row){
                     echo 
                         "<tr>
                             <td>" . $row["COMPLAINT_NUMBER"]. "</td>
