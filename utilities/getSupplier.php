@@ -1,15 +1,12 @@
 <?php
+    require_once("../config.php");
     $userID = $_POST["userID"];
-    $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
-    if (mysql_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-        exit();
-    }
 
-    $sql = "SELECT * FROM sell_crop WHERE SUPPLIER_ID = '$userID'";
-    $result = mysqli_query($con, $sql);
+    $query = $con->prepare("SELECT * FROM sell_crop WHERE SUPPLIER_ID = '$userID'");
+    $query->execute();
+    $sqldata=$query->fetchAll(PDO::FETCH_ASSOC);
     $serial_number = 1;
-    while($row = mysqli_fetch_assoc($result)){
+    foreach($sqldata as $row){
         echo 
             "<tr>
                 <td>" . $serial_number++ . "</td>
