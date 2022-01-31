@@ -1,3 +1,6 @@
+<?php
+    require_once("../config.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,15 +62,11 @@
             </tr>
 
             <?php
-                $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
-                if (mysqli_connect_errno()) {
-                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    exit();
-                }
-                $sql = "SELECT * FROM farmer ORDER BY FARMER_ID ASC";
-                $result = mysqli_query($con, $sql);
+                $query = $con->prepare("SELECT * FROM farmer ORDER BY FARMER_ID ASC");
+                $query->execute();
+                $sqldata=$query->fetchAll(PDO::FETCH_ASSOC);
                 $serial_number = 1;
-                while($row = mysqli_fetch_assoc($result)){
+                foreach($sqldata as $row){
                     echo 
                         "<tr>
                             <td>" . $serial_number++ . "</td>
@@ -98,16 +97,11 @@
                 <th>Delete Supplier</th>
             </tr>
             <?php
-                $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
-                if (mysqli_connect_errno()) {
-                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    exit();
-                }
-
-                $sql = "SELECT * FROM supplier ORDER BY SUPPLIER_ID ASC";
-                $result = mysqli_query($con, $sql);
+                $query2 = $con->prepare("SELECT * FROM supplier ORDER BY SUPPLIER_ID ASC");
+                $query2->execute();
+                $sqldata2 = $query2->fetchAll(PDO::FETCH_ASSOC);
                 $serial_number = 1;
-                while($row = mysqli_fetch_assoc($result)){
+                foreach($sqldata as $row){
                     echo 
                         "<tr>
                             <td>" . $serial_number++ . "</td>
@@ -137,14 +131,10 @@
                 <th>Status</th>
             </tr>
             <?php
-                $con = new PDO("sqlsrv:server = tcp:deepakchowdary.database.windows.net,1433; Database = farmerwebservices", "deepakchowdary-admin", "amma@1205");
-                if (mysqli_connect_errno()) {
-                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    exit();
-                }
-                $sql = "SELECT * FROM complaint_page ORDER BY COMPLAINT_NUMBER ASC";
-                $result = mysqli_query($con, $sql);
-                while($row = mysqli_fetch_assoc($result)){
+                $query3 = $con->prepare("SELECT * FROM complaint_page ORDER BY COMPLAINT_NUMBER ASC");
+                $query3->execute();
+                $sqldata3 = $query3->fetchAll(PDO::FETCH_ASSOC);
+                foreach($sqldata as $row){
                     echo 
                         "<tr>
                             <td>" . $row["COMPLAINT_NUMBER"]. "</td>
